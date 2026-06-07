@@ -1,5 +1,5 @@
+name: Build SparkX Fairy OS From ZIP
 
-name: ZIP_NAME="SparkXFairyOS-BuildTestOne-PLUS-v3-JVM17-FIX.zip"
 on:
   workflow_dispatch:
   push:
@@ -21,7 +21,8 @@ jobs:
 
       - name: Unzip SparkX Fairy OS package
         run: |
-          ZIP_NAME="SparkXFairyOS-BuildTestOne-PLUS-v2.zip"
+          ZIP_NAME="SparkXFairyOS-BuildTestOne-PLUS-v3-JVM17-FIX.zip"
+          PROJECT_DIR="SparkXFairyOS-BuildTestOne-v2"
 
           if [ ! -f "$ZIP_NAME" ]; then
             echo "Could not find $ZIP_NAME"
@@ -31,10 +32,12 @@ jobs:
           fi
 
           unzip -q "$ZIP_NAME"
+
           echo "Unzipped package:"
           ls -la
+
           echo "Project folder:"
-          ls -la SparkXFairyOS-BuildTestOne-v2
+          ls -la "$PROJECT_DIR"
 
       - name: Set up Java 17
         uses: actions/setup-java@v4
