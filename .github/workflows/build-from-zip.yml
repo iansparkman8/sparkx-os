@@ -1,6 +1,5 @@
 
-name: Build SparkX Fairy OS From ZIP
-
+name: ZIP_NAME="SparkXFairyOS-BuildTestOne-PLUS-v3-JVM17-FIX.zip"
 on:
   workflow_dispatch:
   push:
